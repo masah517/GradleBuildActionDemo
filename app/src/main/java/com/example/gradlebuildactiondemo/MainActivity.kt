@@ -13,5 +13,7 @@ class MainActivity : AppCompatActivity() {
         // add a line of comment
 
         // add a line of comment in ver 5
+        // add a line of comment in ver 6
+
     }
 }
