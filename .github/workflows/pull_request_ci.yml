@@ -14,8 +14,10 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2.1.0
       - name: Build with Gradle
-        run: ./gradlew --no-daemon assembleDebug -Dorg.gradle.jvmargs=-Xmx2048m
+        run: ./gradlew --no-daemon assembleDebug -Dorg.gradle.jvmargs=-Xmx248m
       - name: Archive assembled APK
         uses: actions/upload-artifact@v2
         with:
@@ -33,10 +35,8 @@ jobs:
           java-version: '11'
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.1.0
-        with:
-          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
       - name: Run UnitTest
-        run: ./gradlew --no-daemon testDebugUnitTest -Dorg.gradle.jvmargs=-Xmx2048m
+        run: ./gradlew --no-daemon testDebugUnitTest -Dorg.gradle.jvmargs=-Xmx248m
 
   ktlint:
     runs-on: ubuntu-latest
@@ -49,6 +49,7 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2.1.0
       - name: Run Android Lint
-        run: ./gradlew --no-daemon lintDebug -Dorg.gradle.jvmargs=-Xmx2048m
-
+        run: ./gradlew --no-daemon lintDebug -Dorg.gradle.jvmargs=-Xmx248m
