@@ -35,10 +35,10 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - name: Copy CI gradle.properties
-        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.1.0
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
       - name: Run UnitTest
         run: ./gradlew --no-daemon testDebugUnitTest
 
@@ -53,9 +53,9 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: '11'
-      - name: Copy CI gradle.properties
-        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2.1.0
+      - name: Copy CI gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
       - name: Run Android Lint
         run: ./gradlew --no-daemon lintDebug
