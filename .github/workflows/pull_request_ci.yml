@@ -19,7 +19,7 @@ jobs:
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
       - name: Copy CI gradle.properties
-          run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
+        run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
       - name: Check JVM setting
         run: ./gradlew --no-daemon --debug
       - name: Build with Gradle
