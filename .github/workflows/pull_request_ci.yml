@@ -19,7 +19,7 @@ jobs:
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
       - name: Check JVM setting
-          run: ./gradlew --no-daemon --debug
+        run: ./gradlew --no-daemon --debug
       - name: Build with Gradle
         run: ./gradlew --no-daemon assembleDebug
       - name: Archive assembled APK
