@@ -18,6 +18,8 @@ jobs:
         uses: gradle/gradle-build-action@v2.1.0
         with:
           cache-read-only: ${{ github.ref != 'refs/heads/develop' }}
+      - name: Check JVM setting
+          run: ./gradlew --no-daemon --debug
       - name: Build with Gradle
         run: ./gradlew --no-daemon assembleDebug
       - name: Archive assembled APK
