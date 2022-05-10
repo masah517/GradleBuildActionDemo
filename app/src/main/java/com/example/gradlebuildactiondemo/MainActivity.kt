@@ -12,6 +12,6 @@ class MainActivity : AppCompatActivity() {
         // some default text here
         // more comments
 
-        Log.d("CUSLOG", "TEST")
+        Log.d("CUSLOG", "TEST2")
     }
 }
