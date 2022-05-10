@@ -10,5 +10,6 @@ class MainActivity : AppCompatActivity() {
 
         // some default text here
         // more comments
+        // extra comments
     }
 }
