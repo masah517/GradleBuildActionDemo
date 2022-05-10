@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         // some default text here
         // more comments
         // directly clone from develop branch
+
     }
 }
